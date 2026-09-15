@@ -3,15 +3,9 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/Roam_Eats/',   // GitHub repo name
+  // Local dev: './'  |  GitHub Pages production: '/Roam_Eats/'
+  base: process.env.VITE_BASE_PATH || './',
   server: {
     port: 5173,
-    proxy: {
-      '/api': {
-        target: 'http://localhost:8000',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, '')
-      }
-    }
   }
 })

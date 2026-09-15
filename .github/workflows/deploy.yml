@@ -41,6 +41,7 @@ jobs:
         working-directory: frontend
         env:
           VITE_API_URL: ${{ secrets.VITE_API_URL }}
+          VITE_BASE_PATH: /Roam_Eats/
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
