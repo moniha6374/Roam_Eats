@@ -1,8 +1,11 @@
 import axios from 'axios'
 
+// Production: Render backend URL | Development: localhost
+const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000'
+
 const api = axios.create({
-  baseURL: 'http://localhost:8000',
-  timeout: 10000,
+  baseURL: BASE_URL,
+  timeout: 15000,
 })
 
 export const auth = {
